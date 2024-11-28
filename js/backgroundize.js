@@ -14,4 +14,4 @@ document
 
   .querySelector("#banner .mask")
 
-  .setAttribute('style', 'background-color:rgba(0,0,0,0)')
+  .setAttribute('style', 'background-color:rgba(0,0,0,0.1)')
