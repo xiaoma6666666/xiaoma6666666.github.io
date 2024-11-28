@@ -20,8 +20,8 @@
   <meta name="keywords" content="">
   
     <meta property="og:type" content="website">
-<meta property="og:title" content="小马的博客">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:title" content="标签 - 算法">
+<meta property="og:url" content="http://example.com/tags/%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="小马的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
@@ -29,7 +29,7 @@
   
   
   
-  <title>小马的博客</title>
+  <title>标签 - 算法 - 小马的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -102,7 +102,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 100vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -202,13 +202,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/023%20Rare%20Wind.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.15)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="小马666  欢迎您"></span>
+            <span id="subtitle" data-typed-text="标签 - 算法"></span>
           
         </div>
 
@@ -222,136 +222,6 @@
       
     </div>
     
-      <div style="height:500px" id="bubbles"></div>
-      <script>
-        circleMagic();
-        function circleMagic(options) {
-            let width;
-            let height;
-            let canvas;
-            let ctx;
-            let animateHeader = true;
-            const circles = [];
-    
-            const settings = options || {
-                color: 'rgba(255,255,255,.3)',
-                radius: 10,
-                density: 0.1,
-                clearOffset: 0.7
-            }
-    
-            const container = document.getElementById('bubbles');
-            initContainer();
-            addListeners();
-    
-            function initContainer() {
-                width = container.offsetWidth;
-                height = container.offsetHeight - 120;
-    
-                initCanvas();
-                canvas = document.getElementById('homeTopCanvas');
-                canvas.width = width;
-                canvas.height = height;
-                canvas.style.position = 'absolute';
-                canvas.style.left = '0';
-                canvas.style.bottom = '0';
-                ctx = canvas.getContext('2d');
-    
-                for (let x = 0; x < width * settings.density; x++) {
-                    const c = new Circle();
-                    circles.push(c);
-                }
-                animate();
-            }
-    
-            function initCanvas() {
-                const canvasElement = document.createElement('canvas');
-                canvasElement.id = 'homeTopCanvas';
-                canvasElement.style.pointerEvents = 'none';
-                container.appendChild(canvasElement);
-                canvasElement.parentElement.style.overflow = 'hidden';
-            }
-    
-            function addListeners() {
-                window.addEventListener('scroll', scrollCheck, false);
-                window.addEventListener('resize', resize, false);
-            }
-    
-            function scrollCheck() {
-                if (document.body.scrollTop > height) {
-                    animateHeader = false;
-                } else {
-                    animateHeader = true;
-                }
-            }
-    
-            function resize() {
-                width = container.clientWidth;
-                height = container.clientHeight;
-                container.height = height + 'px';
-                canvas.width = width;
-                canvas.height = height;
-            }
-    
-            function animate() {
-                if (animateHeader) {
-                    ctx.clearRect(0, 0, width, height);
-                    for (const i in circles) {
-                        circles[i].draw();
-                    }
-                }
-                requestAnimationFrame(animate);
-            }
-    
-            function randomColor() {
-                const r = Math.floor(Math.random() * 255);
-                const g = Math.floor(Math.random() * 255);
-                const b = Math.floor(Math.random() * 255);
-                const alpha = Math.random().toPrecision(2);
-                return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
-            }
-    
-            function Circle() {
-                const that = this;
-                (function () {
-                    that.pos = {};
-                    init();
-                })();
-                function init() {
-                    that.pos.x = Math.random() * width;
-                    that.pos.y = height + Math.random() * 100;
-                    that.alpha = 0.1 + Math.random() * settings.clearOffset;
-                    that.scale = 0.1 + Math.random() * 0.3;
-                    that.speed = Math.random();
-                    if (settings.color === 'random') {
-                        that.color = randomColor();
-                    } else {
-                        that.color = settings.color;
-                    }
-                }
-                this.draw = function () {
-                    if (that.alpha <= 0) {
-                        init();
-                    }
-                    that.pos.y -= that.speed;
-                    that.alpha -= 0.0005;
-                    ctx.beginPath();
-                    ctx.arc(
-                        that.pos.x,
-                        that.pos.y,
-                        that.scale * settings.radius,
-                        0,
-                        2 * Math.PI,
-                        false
-                    );
-                    ctx.fillStyle = that.color;
-                    ctx.fill();
-                    ctx.closePath();
-                }
-            }
-        }
-      </script>
-    
   </div>
 </div>
 
@@ -363,144 +233,28 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          style="margin-top: 0">
+          >
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+  
     
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" target="_self">
-          <img src="/img/%E6%97%A0%E6%B0%B4%E5%8D%B0.jpeg" srcset="/img/loading.gif" lazyload alt="邻接矩阵实现无向图的遍历">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" target="_self">
-          邻接矩阵实现无向图的遍历
-        </a>
-      </h2>
-
       
-      <a class="index-excerpt " href="/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" target="_self">
-        <div>
-          &#x2F;&#x2F;邻接矩阵实现无向图的遍历#include&lt;bits&#x2F;stdc++.h&gt;using namespace std; const int MaxSize&#x3D;10;int visited[MaxSize]&#x3D; {0};templateclass MGraph {    public:        MGraph(DataType a[],int
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-11-28 18:10" pubdate>
-              2024-11-28
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
+      <p class="h5">2024</p>
     
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2024/11/25/%E6%9C%80%E7%BE%8E%E7%9A%84%E6%83%85%E4%B9%A6/" target="_self">
-          <img src="/img/Screenshot_20230730_215810_com.ss.android.ugc.awe.jpg" srcset="/img/loading.gif" lazyload alt="Three Days to See(Excerpts)">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/11/25/%E6%9C%80%E7%BE%8E%E7%9A%84%E6%83%85%E4%B9%A6/" target="_self">
-          Three Days to See(Excerpts)
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/2024/11/25/%E6%9C%80%E7%BE%8E%E7%9A%84%E6%83%85%E4%B9%A6/" target="_self">
-        <div>
-          Three Days to See(Excerpts) 假如给我三天光明（节选） All of us have read thrilling stories in which the hero had only a limited and specified time to live. Sometimes it was as long as a year, sometimes as short a
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-11-25 19:33" pubdate>
-              2024-11-25
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%91%98%E6%8A%84/">#摘抄</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2024/11/21/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" target="_self">
-          <img src="/img/IMG_20240426_152802.jpg" srcset="/img/loading.gif" lazyload alt="Youth">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2024/11/21/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" target="_self">
-          Youth
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt " href="/2024/11/21/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" target="_self">
-        <div>
-          Youth Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotion
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-11-21 14:45" pubdate>
-              2024-11-21
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
+    <a href="/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="list-group-item list-group-item-action">
+      <time>11-28</time>
+      <div class="list-group-item-title">邻接矩阵实现无向图的遍历</div>
+    </a>
+  
+</div>
 
 
 

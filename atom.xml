@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-11-28T09:52:33.227Z</updated>
+  <updated>2024-11-28T10:22:11.994Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>邻接矩阵实现无向图的遍历</title>
+    <link href="http://example.com/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/"/>
+    <id>http://example.com/2024/11/28/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AE%9E%E7%8E%B0%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/</id>
+    <published>2024-11-28T10:10:04.000Z</published>
+    <updated>2024-11-28T10:22:11.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x2F;&#x2F;邻接矩阵实现无向图的遍历<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;</p><p>const int MaxSize&#x3D;10;<br>int visited[MaxSize]&#x3D; {0};<br>template<typename datatype><br>class MGraph {<br>    public:<br>        MGraph(DataType a[],int n,int e);   &#x2F;&#x2F;构造函数<br>&#x2F;&#x2F;~MGraph();            &#x2F;&#x2F;析构函数<br>        void DFS(int v);      &#x2F;&#x2F;深度优先遍历图<br>        void BFS(int v);      &#x2F;&#x2F;广度优先遍历图<br>    private:<br>        DataType vertex[MaxSize];    &#x2F;&#x2F;存放图中顶点的数组<br>        int edge[MaxSize][MaxSize];    &#x2F;&#x2F;存放图中边的数组<br>        int vertexNum,edgeNum;         &#x2F;&#x2F;图的顶点数和边数</typename></p><p>};</p><p>template<typename datatype><br>MGraph<DataType>::MGraph(DataType a[],int n,int e) {<br>    int i,j,k;<br>    vertexNum&#x3D;n;<br>    edgeNum&#x3D;e;<br>    for(i&#x3D;0; i&lt;vertexNum; i++)    &#x2F;&#x2F;储存顶点<br>        vertex[i]&#x3D;a[i];</DataType></typename></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>; i&lt;vertexNum; i++) &#123;   <span class="hljs-comment">//初始化邻接矩阵</span><br><span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>; j&lt;vertexNum; j++) &#123;<br>edge[i][j]=<span class="hljs-number">0</span>;<br>&#125;<br>&#125;<br><span class="hljs-keyword">for</span>(k=<span class="hljs-number">0</span>; k&lt;edgeNum; k++) &#123;    <span class="hljs-comment">//依次输入每一条边</span><br>cin&gt;&gt;i&gt;&gt;j;                <span class="hljs-comment">//输入边依附的两个顶点的编号</span><br>edge[i][j]=<span class="hljs-number">1</span>;             <span class="hljs-comment">//置有边标志</span><br>edge[j][i]=<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>}</p><p>template<typename datatype><br>void MGraph<DataType>::DFS(int v) {     &#x2F;&#x2F;从顶点v出发<br>    cout&lt;&lt;vertex[v];           &#x2F;&#x2F;输出顶点<br>    visited[v]&#x3D;1;              &#x2F;&#x2F;标记已被访问过<br>    for(int j&#x3D;0; j&lt;vertexNum; j++) {<br>        if(edge[v][j]&#x3D;&#x3D;1&amp;&amp;visited[j]&#x3D;&#x3D;0) DFS(j);<br>    }</DataType></typename></p><p>}</p><p>template<typename datatype><br>void MGraph<DataType>::BFS(int v) {     &#x2F;&#x2F;从顶点v出发<br>    int w,j,Q[MaxSize];            &#x2F;&#x2F;顺序队列    w:队头元素<br>    int front&#x3D;-1,rear&#x3D;-1;           &#x2F;&#x2F;初始化队列<br>    cout&lt;&lt;vertex[v];<br>    visited[v]&#x3D;1;<br>    Q[++rear]&#x3D;v;                  &#x2F;&#x2F;被访问顶点入队<br>    while(front!&#x3D;rear) {          &#x2F;&#x2F;队列非空时<br>        w&#x3D;Q[++front];<br>        for(j&#x3D;0; j&lt;vertexNum; j++) {<br>            if(edge[w][j]&#x3D;&#x3D;1&amp;&amp;visited[j]&#x3D;&#x3D;0) {<br>                cout&lt;&lt;vertex[j];<br>                visited[j]&#x3D;1;<br>                Q[++rear]&#x3D;j;<br>            }<br>        }<br>    }</DataType></typename></p><p>}</p><p>int main() {<br>    int i;<br>    char ch[]&#x3D; {‘A’,’B’,’C’,’D’,’E’,’F’};<br>    MGraph<char>MG {ch,6,6};   &#x2F;&#x2F;建立6个顶点，6条边的无向图,也可cin&gt;&gt;n,cin&gt;&gt;e输入顶点数和条数<br>    for(i&#x3D;0; i&lt;MaxSize; i++) {<br>        visited[i]&#x3D;0;<br>    }<br>    cout&lt;&lt;”深度优先遍历序列是：”;<br>    MG.DFS(0);<br>    cout&lt;&lt;endl;<br>    for(i&#x3D;0; i&lt;MaxSize; i++) {<br>        visited[i]&#x3D;0;<br>    }<br>    cout&lt;&lt;”广度优先遍历序列是：”;<br>    MG.BFS(0);<br>    return 0;<br>}</char></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&amp;#x2F;&amp;#x2F;邻接矩阵实现无向图的遍历&lt;br&gt;#include&amp;lt;bits&amp;#x2F;stdc++.h&amp;gt;&lt;br&gt;using namespace std;&lt;/p&gt;
+&lt;p&gt;const int MaxSize&amp;#x3D;10;&lt;br&gt;int visited[M</summary>
+      
+    
+    
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Three Days to See(Excerpts)</title>
