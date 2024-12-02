@@ -434,7 +434,7 @@ sup > a::before,
   .navbar .dropdown-collapse,
   .top-nav-collapse,
   .navbar-col-show {
-    background: rgba(47,65,84,0.5);
+    background: rgba(47,65,84,0.6);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
   }
@@ -910,8 +910,8 @@ i.iconfont {
     --link-hover-bg-color: #364151;
     --line-color: #435266;
     --navbar-bg-color: #1f3144;
-    --navbar-text-color: #d0d0d0;
-    --subtitle-color: #d0d0d0;
+    --navbar-text-color: #5E5E5F;
+    --subtitle-color: #5E5E5F;
     --scrollbar-color: #687582;
     --scrollbar-hover-color: #9da8b3;
     --button-bg-color: transparent;
@@ -930,7 +930,7 @@ i.iconfont {
     :root:not([data-user-color-scheme]) .navbar .dropdown-collapse,
     :root:not([data-user-color-scheme]) .top-nav-collapse,
     :root:not([data-user-color-scheme]) .navbar-col-show {
-      background: rgba(31,49,68,0.5);
+      background: rgba(31,49,68,0.6);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }
@@ -964,8 +964,8 @@ i.iconfont {
     --link-hover-bg-color: #364151;
     --line-color: #435266;
     --navbar-bg-color: #1f3144;
-    --navbar-text-color: #d0d0d0;
-    --subtitle-color: #d0d0d0;
+    --navbar-text-color: #5E5E5F;
+    --subtitle-color: #5E5E5F;
     --scrollbar-color: #687582;
     --scrollbar-hover-color: #9da8b3;
     --button-bg-color: transparent;
@@ -984,7 +984,7 @@ i.iconfont {
     [data-user-color-scheme="dark"] .navbar .dropdown-collapse,
     [data-user-color-scheme="dark"] .top-nav-collapse,
     [data-user-color-scheme="dark"] .navbar-col-show {
-      background: rgba(31,49,68,0.5);
+      background: rgba(31,49,68,0.6);
       -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
     }
